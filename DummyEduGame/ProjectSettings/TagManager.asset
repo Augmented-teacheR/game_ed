@@ -3,14 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Obstacle
-  - Car
-  - SuccessArea
-  - Block
-  - GameManager
-  - CarInteractor
-  - CarInteraction
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -18,8 +11,8 @@ TagManager:
   - 
   - Water
   - UI
-  - Cards
-  - Car
+  - 
+  - 
   - 
   - 
   - 
