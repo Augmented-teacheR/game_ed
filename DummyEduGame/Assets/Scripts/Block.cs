@@ -12,15 +12,18 @@ public class Block : MonoBehaviour
     private BlockType type;
     [SerializeField]
     private float value;
+    [SerializeField]
+    private int voteAmount;
 
-    //private CodeBlock codeBlock;
 
-    // TODO REMOVE LATER - JUST FOR TESTING
-    public string key;
-
-    private void Awake()
+    public void AddVote()
     {
-        //this.codeBlock = FindObjectOfType<CodeBlock>();
+        voteAmount++;
+    }
+
+    public void RemoveVote()
+    {
+        voteAmount--;
     }
 
     public BlockType GetBlockType()
@@ -33,26 +36,8 @@ public class Block : MonoBehaviour
         return this.value;
     }
 
-    private void Update()
+    public int GetVoteAmount()
     {
-        if (Input.GetKey(key))
-        {
-            float speed = -15.0f;
-            float newX = transform.position.x + speed * Time.deltaTime;
-            float y = transform.position.y;
-            float z = transform.position.z;
-
-            transform.position = new Vector3(newX, y, z);
-        }
+        return this.voteAmount;
     }
-
-/*    private void OnTriggerEnter(Collider other)
-    {
-        codeBlock.AddBlock(this);
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        codeBlock.RemoveBlock(this);
-    }*/
 }

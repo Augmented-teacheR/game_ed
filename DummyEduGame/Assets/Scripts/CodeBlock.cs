@@ -4,44 +4,70 @@ using UnityEngine;
 
 public class CodeBlock : MonoBehaviour
 {
-    [SerializeField]
-    private List<Block> blocks;
+    public List<Block> blocks;
     [SerializeField]
     private float readDistance;
     [SerializeField]
     private float readTime;
     [SerializeField]
     private float readVelocity;
-
-    public List<Block> Blocks { get => blocks; set => blocks = value; }
+    [SerializeField]
+    private Block activeBlock;
 
     public void ReadValues()
-    {        
-        foreach(Block block in Blocks) 
+    {
+        var maxValue = FindMaxVoteAmount(blocks);
+
+        foreach (Block block in blocks) 
         {
-            switch (block.GetBlockType()) 
-            {
-                case BlockType.distance:
-                    this.readDistance = block.GetValue();
-                    break;
-                case BlockType.time:
-                    this.readTime = block.GetValue();
-                    break;
-                case BlockType.velocity:
-                    this.readVelocity = block.GetValue();
-                    break;
-            }
+            int voteAmount = block.GetVoteAmount();
+            if(voteAmount < maxValue) { blocks.Remove(block); }
+        }
+
+        if(blocks.Count > 1)
+        {
+            activeBlock = blocks[Random.Range(0, blocks.Count)];
+            Debug.Log("ACTIVE BLOCK " + activeBlock.GetValue());
+        }
+        else if(blocks.Count == 0)
+        {
+            Debug.LogError("No Blocks Found");
+        }
+        else
+        {
+            activeBlock = blocks[0];
+        }
+        GetValue(activeBlock);
+    }
+
+    private void GetValue(Block block)
+    {
+        switch (block.GetBlockType())
+        {
+            case BlockType.distance:
+                this.readDistance = block.GetValue();
+                break;
+            case BlockType.time:
+                this.readTime = block.GetValue();
+                break;
+            case BlockType.velocity:
+                this.readVelocity = block.GetValue();
+                break;
         }
     }
 
-    public void AddBlock(Block block)
+    private float FindMaxVoteAmount(List<Block> blockList)
     {
-        Blocks.Add(block);
-    }
+        List<float> values = new List<float>();
 
-    public void RemoveBlock(Block block)
-    {
-        Blocks.Remove(block);
+        foreach (Block block in blocks)
+        {
+            values.Add(block.GetVoteAmount());
+        }
+
+        float maxValue = Mathf.Max(values.ToArray());
+
+        return maxValue;
     }
 
     public float GetDistance()

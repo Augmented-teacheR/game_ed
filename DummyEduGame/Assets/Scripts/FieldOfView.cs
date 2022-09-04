@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 public class FieldOfView : MonoBehaviour
 {
-
     public float viewRadius;
     [Range(0, 360)]
     public float viewAngle;
@@ -13,7 +12,7 @@ public class FieldOfView : MonoBehaviour
     public LayerMask obstacleMask;
 
     [SerializeField]
-    private CodeBlock codeBlock;
+    private Block block;
 
     [HideInInspector]
     public List<Transform> visibleTargets = new List<Transform>();
@@ -37,12 +36,11 @@ public class FieldOfView : MonoBehaviour
         visibleTargets.Clear();
 
         Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
-        List<Block> blocks = new List<Block>();
 
         for (int i = 0; i < targetsInViewRadius.Length; i++)
         {
-            blocks.Add(targetsInViewRadius[i].gameObject.GetComponent<Block>());
+            block.AddVote();
+            Debug.Log("VOTE ADDED ##################");
         }
-        codeBlock.Blocks = blocks;
     }
 }

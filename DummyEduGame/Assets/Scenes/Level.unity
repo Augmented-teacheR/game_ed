@@ -213,6 +213,7 @@ GameObject:
   - component: {fileID: 28176322}
   - component: {fileID: 28176321}
   - component: {fileID: 28176324}
+  - component: {fileID: 28176325}
   m_Layer: 0
   m_Name: Card1Target
   m_TagString: Untagged
@@ -289,7 +290,7 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 28176324}
+  mPreview: {fileID: 28176325}
 --- !u!4 &28176323
 Transform:
   m_ObjectHideFlags: 0
@@ -306,6 +307,25 @@ Transform:
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &28176324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28176320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 28176322}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: Card_1
+  mDatasetName: Vuforia/EduGame.xml
+  mCastedBehaviour: {fileID: 28176322}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
+--- !u!114 &28176325
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1236,6 +1256,7 @@ GameObject:
   - component: {fileID: 776834097}
   - component: {fileID: 776834096}
   - component: {fileID: 776834095}
+  - component: {fileID: 776834099}
   m_Layer: 0
   m_Name: CarInteraction
   m_TagString: Untagged
@@ -1330,8 +1351,8 @@ MonoBehaviour:
   mRuntimeTexture: {fileID: 0}
   mMotionHint: 1
   mTrackingOptimization: 0
-  mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 776834095}
+  mTrackingOptimizationNeedsUpgrade: 1
+  mPreview: {fileID: 776834099}
 --- !u!4 &776834098
 Transform:
   m_ObjectHideFlags: 0
@@ -1348,6 +1369,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &776834099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776834094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 776834097}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: Auto
+  mDatasetName: Vuforia/EduGame.xml
+  mCastedBehaviour: {fileID: 776834097}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &828567087
 GameObject:
   m_ObjectHideFlags: 0
@@ -1360,6 +1400,7 @@ GameObject:
   - component: {fileID: 828567089}
   - component: {fileID: 828567088}
   - component: {fileID: 828567091}
+  - component: {fileID: 828567092}
   m_Layer: 0
   m_Name: Scene
   m_TagString: Untagged
@@ -1436,7 +1477,7 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 828567091}
+  mPreview: {fileID: 828567092}
 --- !u!4 &828567090
 Transform:
   m_ObjectHideFlags: 0
@@ -1453,6 +1494,25 @@ Transform:
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &828567091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828567087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 828567089}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: MainMarker
+  mDatasetName: Vuforia/EduGame.xml
+  mCastedBehaviour: {fileID: 828567089}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
+--- !u!114 &828567092
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2328,6 +2388,7 @@ GameObject:
   - component: {fileID: 1436940341}
   - component: {fileID: 1436940340}
   - component: {fileID: 1436940339}
+  - component: {fileID: 1436940343}
   m_Layer: 0
   m_Name: Card1Target (2)
   m_TagString: Untagged
@@ -2422,8 +2483,8 @@ MonoBehaviour:
   mRuntimeTexture: {fileID: 0}
   mMotionHint: 1
   mTrackingOptimization: 0
-  mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 1436940339}
+  mTrackingOptimizationNeedsUpgrade: 1
+  mPreview: {fileID: 1436940343}
 --- !u!4 &1436940342
 Transform:
   m_ObjectHideFlags: 0
@@ -2439,6 +2500,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1436940343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436940338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 1436940341}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: Card_3
+  mDatasetName: Vuforia/EduGame.xml
+  mCastedBehaviour: {fileID: 1436940341}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &1548467513
 GameObject:
   m_ObjectHideFlags: 0
@@ -2708,6 +2788,7 @@ GameObject:
   - component: {fileID: 1682784023}
   - component: {fileID: 1682784022}
   - component: {fileID: 1682784021}
+  - component: {fileID: 1682784025}
   m_Layer: 0
   m_Name: Card1Target (1)
   m_TagString: Untagged
@@ -2803,7 +2884,7 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 1682784021}
+  mPreview: {fileID: 1682784025}
 --- !u!4 &1682784024
 Transform:
   m_ObjectHideFlags: 0
@@ -2819,6 +2900,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1682784025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682784020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 1682784023}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: Card_2
+  mDatasetName: Vuforia/EduGame.xml
+  mCastedBehaviour: {fileID: 1682784023}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &1712212046
 GameObject:
   m_ObjectHideFlags: 0
