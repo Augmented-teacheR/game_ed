@@ -87,14 +87,14 @@ public class CarInteraction : MonoBehaviour
                 car.transform.position = target.transform.position;
                 car.transform.localPosition = new Vector3(offset, 0, car.transform.localPosition.z);
             }
-            //if (car.transform.localPosition.z < StartingCarPosition - .08)
-            //{
-            //    PlayStarted = true;
-            //}
-            if (target.transform.position.z < StartingCarPosition + launchingPosition)
+            if (car.transform.localPosition.z < StartingCarPosition - .03)
             {
                 PlayStarted = true;
             }
+            //if (target.transform.position.z < StartingCarPosition + launchingPosition)
+            //{
+            //    PlayStarted = true;
+            //}
         }
     }
 
