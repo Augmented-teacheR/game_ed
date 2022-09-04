@@ -40,16 +40,6 @@ public class CarInteraction : MonoBehaviour
         StartCoroutine("FindTargetsWithDelay", .2f);
     }
 
-    /*    private void OnTriggerEnter(Collider other)
-        {
-            if (other.tag.Equals("Car") && !isCarSet)
-            {
-                this.car = other.gameObject;
-                this._car = this.car.GetComponent<Car>();
-                StartingCarPosition = this.car.transform.position.z;
-                isCarSet = true;
-            }
-        }*/
     IEnumerator FindTargetsWithDelay(float delay)
     {
         Debug.Log("Corutine started find target");
@@ -88,7 +78,11 @@ public class CarInteraction : MonoBehaviour
                 car.transform.position = target.transform.position;
                 car.transform.localPosition = new Vector3(offset, 0, car.transform.localPosition.z);
             }
-            if (car.transform.localPosition.z < StartingCarPosition - .08)
+            //if (car.transform.localPosition.z < StartingCarPosition - .08)
+            //{
+            //    PlayStarted = true;
+            //}
+            if (target.transform.position.z < StartingCarPosition - .08)
             {
                 PlayStarted = true;
             }
