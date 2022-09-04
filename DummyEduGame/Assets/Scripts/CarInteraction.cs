@@ -26,6 +26,15 @@ public class CarInteraction : MonoBehaviour
     public List<Transform> visibleTargets = new List<Transform>();
     private float offset;
 
+    [Header("Active Range")]
+    [SerializeField]
+    private float positiveLimit;
+    [SerializeField]
+    private float negativeLimit;
+    [SerializeField]
+    private float launchingPosition;
+
+
     public float StartingCarPosition { get => startingCarPosition; set => startingCarPosition = value; }
     public bool PlayStarted { get => playStarted; set => playStarted = value; }
 
@@ -71,8 +80,8 @@ public class CarInteraction : MonoBehaviour
     {
         if (isCarSet)
         {
-            if ((car.transform.localPosition.z < StartingCarPosition + .1)
-            && (car.transform.localPosition.z > StartingCarPosition - .1)
+            if ((car.transform.localPosition.z < StartingCarPosition + positiveLimit)
+            && (car.transform.localPosition.z > StartingCarPosition + negativeLimit)
             && !PlayStarted)
             {
                 car.transform.position = target.transform.position;
@@ -82,7 +91,7 @@ public class CarInteraction : MonoBehaviour
             //{
             //    PlayStarted = true;
             //}
-            if (target.transform.position.z < StartingCarPosition - .08)
+            if (target.transform.position.z < StartingCarPosition + launchingPosition)
             {
                 PlayStarted = true;
             }
