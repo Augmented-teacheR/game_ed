@@ -535,7 +535,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!114 &82196790
 MonoBehaviour:
@@ -549,7 +549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4800a3ebecdeeba40aa47bd4ffb694b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.1
+  speed: 10
   position: {x: 0, y: 0, z: 0}
   state: 1
 --- !u!65 &82196791
@@ -563,8 +563,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.8846347, y: 2.5025783, z: 23.459774}
-  m_Center: {x: 0.9423191, y: 0.7512891, z: -0.25332642}
+  m_Size: {x: 4.2303314, y: 9.981446, z: 23.459785}
+  m_Center: {x: 0.26949754, y: 1.1503589, z: -0.25332612}
 --- !u!4 &82196793 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4034141082989358, guid: 665af55b1d3a28b4681e473b8044c865, type: 3}
@@ -1854,7 +1854,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1248598967819147742, guid: c4cad50aa03bbca42938fe318344950b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1532183532590448871, guid: c4cad50aa03bbca42938fe318344950b, type: 3}
       propertyPath: m_Layer
@@ -2767,6 +2767,10 @@ PrefabInstance:
     - target: {fileID: 1137810407633524, guid: 665af55b1d3a28b4681e473b8044c865, type: 3}
       propertyPath: m_Name
       value: Engine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1137810407633524, guid: 665af55b1d3a28b4681e473b8044c865, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 4034141082989358, guid: 665af55b1d3a28b4681e473b8044c865, type: 3}
       propertyPath: m_RootOrder
@@ -3950,7 +3954,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1863797178}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.0004137, y: 1.4961607, z: 4.83}
