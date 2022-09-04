@@ -11,7 +11,7 @@ public class Train : MonoBehaviour
 {
 
     [SerializeField]
-    private float speed;
+    private float speed = 3.0f;
     [SerializeField]
     private Vector3 position;
     [SerializeField]
@@ -21,18 +21,24 @@ public class Train : MonoBehaviour
     {
         if (state != TrainState.finished)
         {
-            speed = 3;
-            float x = gameObject.transform.position.x + speed * Time.deltaTime;
-            float y = gameObject.transform.position.y;
-            float z = gameObject.transform.position.z;
+            float x = transform.localPosition.x + speed * Time.deltaTime;
+            float y = transform.localPosition.y;
+            float z = transform.localPosition.z;
 
-            gameObject.transform.position = new Vector3(x, y, z);
+            transform.localPosition = new Vector3(x, y, z);
             if (x > 10) state = TrainState.finished;
         }
     }
 
-    internal void Beggin()
+    internal void Begin()
     {
         state = TrainState.running;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag.Equals("Car")){
+            Debug.Log("Collision Entered");
+            state = TrainState.finished;
+        }
     }
 }
