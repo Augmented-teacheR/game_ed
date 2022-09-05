@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="VoteMarker" size="0.020000 0.020000" />
+    <ImageTarget name="MainMarkerBig" size="0.090000 0.090000" />
+    <ImageTarget name="Wood" size="0.040000 0.040000" />
+    <ImageTarget name="VoteMarker4" size="0.020000 0.020000" />
+    <ImageTarget name="VoteMarker3" size="0.020000 0.020000" />
+    <ImageTarget name="VoteMarker2" size="0.020000 0.020000" />
     <ImageTarget name="MainMarker" size="0.065000 0.065000" />
     <ImageTarget name="Card_3" size="0.065000 0.065000" />
     <ImageTarget name="Card_2" size="0.065000 0.065000" />

@@ -24,6 +24,15 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private float carVelocity;
 
+    private AudioSource audioSource;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.Play();
+    }
+
+
     public Car Car { get => car; set => car = value; }
     public Train Train { get => train; set => train = value; }
     public CodeBlock CodeBlock { get => codeBlock; set => codeBlock = value; }

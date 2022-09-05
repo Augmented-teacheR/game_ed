@@ -31,12 +31,18 @@ public class Car : MonoBehaviour
     private IEnumerator timerCorutine;
     private IEnumerator distanceCorutine;
 
+    private AudioSource audioSource;
+    public AudioClip driveSound, crashSound;
+
+    private bool isCarAudioStarted = false;
+
 
     private void Awake()
     {
         position = transform.localPosition;
         timerCorutine = StartTimer();
         distanceCorutine = WaitForDistance();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void Go(float distance, float time, float velocity)
@@ -82,6 +88,13 @@ public class Car : MonoBehaviour
 
     private void StartMovement()
     {
+        if (!isCarAudioStarted)
+        {
+            audioSource.clip = driveSound;
+            audioSource.Play();
+            Debug.Log("AUDIO PLAYING");
+            isCarAudioStarted = true;
+        }
         switch (state)
         {
             case MovementType.velocity:
@@ -159,11 +172,13 @@ public class Car : MonoBehaviour
     {
         if(other.gameObject.tag.Equals("Obstacle") || other.gameObject.tag.Equals("SuccessArea"))
         {
-            Debug.Log("Collision Entered");
-            Debug.Log(state);
-            Debug.Log(other.gameObject.tag);
+            if(other.gameObject.tag.Equals("Obstacle"))
+            {
+                audioSource.clip = crashSound;
+                audioSource.Play();
+            }
             state = MovementType.finished;
-            if (other.gameObject.tag.Equals("SuccessArea")) Debug.Log("Yeeeeeey");
         }
+
     }
 }
