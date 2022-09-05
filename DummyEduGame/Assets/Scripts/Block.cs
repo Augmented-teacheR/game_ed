@@ -20,12 +20,6 @@ public class Block : MonoBehaviour
     {
         this.voteAmount = voteAmount;
     }
-
-    public void RemoveVote()
-    {
-        voteAmount--;
-    }
-
     public BlockType GetBlockType()
     {
         return this.type;
