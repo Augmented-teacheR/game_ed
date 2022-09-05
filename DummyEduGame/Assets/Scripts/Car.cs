@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 public enum MovementType
 {
     time, velocity, distance, finished
@@ -178,7 +180,14 @@ public class Car : MonoBehaviour
                 audioSource.Play();
             }
             state = MovementType.finished;
+            StartCoroutine(EndScene());
         }
 
+    }
+
+    private IEnumerator EndScene()
+    {
+        yield return new WaitForSecondsRealtime(2);
+        SceneManager.LoadScene("EndScreen");
     }
 }

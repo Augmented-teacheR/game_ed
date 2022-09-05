@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -344,6 +344,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8392528544851747926, guid: fbea35d5d7d024139b5c57c6313049dd, type: 3}
       propertyPath: level
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392528544851747927, guid: fbea35d5d7d024139b5c57c6313049dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392528544851747927, guid: fbea35d5d7d024139b5c57c6313049dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1407611918}
+    - target: {fileID: 8392528544851747927, guid: fbea35d5d7d024139b5c57c6313049dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392528544851747927, guid: fbea35d5d7d024139b5c57c6313049dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -660,6 +676,22 @@ PrefabInstance:
       propertyPath: level
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8392528544851747927, guid: fbea35d5d7d024139b5c57c6313049dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392528544851747927, guid: fbea35d5d7d024139b5c57c6313049dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1407611918}
+    - target: {fileID: 8392528544851747927, guid: fbea35d5d7d024139b5c57c6313049dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392528544851747927, guid: fbea35d5d7d024139b5c57c6313049dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbea35d5d7d024139b5c57c6313049dd, type: 3}
 --- !u!1 &923476851
@@ -765,6 +797,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8392528544851747921, guid: fbea35d5d7d024139b5c57c6313049dd, type: 3}
   m_PrefabInstance: {fileID: 479713484}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1407611918 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8392528544851747926, guid: fbea35d5d7d024139b5c57c6313049dd, type: 3}
+  m_PrefabInstance: {fileID: 8392528543751253650}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6ae4f552aca14942a387a49bff01fc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1479873166
 GameObject:
   m_ObjectHideFlags: 0
@@ -1098,6 +1141,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8392528544851747926, guid: fbea35d5d7d024139b5c57c6313049dd, type: 3}
       propertyPath: level
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392528544851747927, guid: fbea35d5d7d024139b5c57c6313049dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392528544851747927, guid: fbea35d5d7d024139b5c57c6313049dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1407611918}
+    - target: {fileID: 8392528544851747927, guid: fbea35d5d7d024139b5c57c6313049dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392528544851747927, guid: fbea35d5d7d024139b5c57c6313049dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
