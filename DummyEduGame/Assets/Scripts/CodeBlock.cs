@@ -12,32 +12,25 @@ public class CodeBlock : MonoBehaviour
     [SerializeField]
     private float readVelocity;
     [SerializeField]
-    private Block activeBlock;
+    private Block randomBlock;
 
     public void ReadValues()
     {
         var maxValue = FindMaxVoteAmount(blocks);
 
-        foreach (Block block in blocks) 
-        {
+        for(int i = 0; i < blocks.Count; i++) {
+            Block block = blocks[i];
             int voteAmount = block.GetVoteAmount();
-            if(voteAmount < maxValue) { blocks.Remove(block); }
+            if(voteAmount < maxValue) blocks.Remove(block);
         }
 
-        if(blocks.Count > 1)
-        {
-            activeBlock = blocks[Random.Range(0, blocks.Count)];
-            Debug.Log("ACTIVE BLOCK " + activeBlock.GetValue());
-        }
-        else if(blocks.Count == 0)
-        {
-            Debug.LogError("No Blocks Found");
-        }
-        else
-        {
-            activeBlock = blocks[0];
-        }
-        GetValue(activeBlock);
+        if(blocks.Count > 1) randomBlock = blocks[Random.Range(0, blocks.Count-1)];
+        
+        else if(blocks.Count == 0) Debug.LogError("No Blocks Found");
+        
+        else randomBlock = blocks[0];
+        
+        GetValue(randomBlock);
     }
 
     private void GetValue(Block block)
@@ -60,9 +53,9 @@ public class CodeBlock : MonoBehaviour
     {
         List<float> values = new List<float>();
 
-        foreach (Block block in blocks)
+        for (int i = 0; i < blocks.Count; i++)
         {
-            values.Add(block.GetVoteAmount());
+            values.Add(blocks[i].GetVoteAmount());
         }
 
         float maxValue = Mathf.Max(values.ToArray());

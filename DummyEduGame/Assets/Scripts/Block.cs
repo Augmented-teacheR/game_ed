@@ -16,9 +16,9 @@ public class Block : MonoBehaviour
     private int voteAmount;
 
 
-    public void AddVote()
+    public void SetVoteAmount(int voteAmount)
     {
-        voteAmount++;
+        this.voteAmount = voteAmount;
     }
 
     public void RemoveVote()

@@ -36,11 +36,7 @@ public class FieldOfView : MonoBehaviour
         visibleTargets.Clear();
 
         Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
-
-        for (int i = 0; i < targetsInViewRadius.Length; i++)
-        {
-            block.AddVote();
-            Debug.Log("VOTE ADDED ##################");
-        }
+        int voteAmount = targetsInViewRadius.Length;
+        block.SetVoteAmount(voteAmount);
     }
 }
