@@ -220,8 +220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   value: 15
-  codeBlock: {fileID: 0}
-  key: q
+  voteAmount: 0
 --- !u!65 &7036513169200186940
 BoxCollider:
   m_ObjectHideFlags: 0

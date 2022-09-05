@@ -9,6 +9,7 @@ TagManager:
   - Car
   - Obstacle
   - SuccessArea
+  - Vote
   layers:
   - Default
   - TransparentFX
@@ -19,6 +20,7 @@ TagManager:
   - Car
   - Cards
   - 
+  - Vote
   - 
   - 
   - 
