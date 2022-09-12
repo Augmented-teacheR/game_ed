@@ -11,11 +11,15 @@ public class FieldOfView : MonoBehaviour
     public LayerMask targetMask;
     public LayerMask obstacleMask;
 
-    [SerializeField]
-    private Block block;
-
     [HideInInspector]
     public List<Transform> visibleTargets = new List<Transform>();
+
+    private Block block;
+
+    private void Awake()
+    {
+        block = GetComponent<Block>();
+    }
 
     void Start()
     {

@@ -1499,7 +1499,7 @@ Transform:
   - {fileID: 664712080}
   - {fileID: 52230858}
   m_Father: {fileID: 631765351}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &363879767
 MonoBehaviour:
@@ -1516,6 +1516,7 @@ MonoBehaviour:
   blocks:
   - {fileID: 1285314509}
   - {fileID: 721415351}
+  - {fileID: 1304889045}
   readDistance: 0
   readTime: 0
   readVelocity: 0
@@ -2827,7 +2828,7 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 0
-  block: {fileID: 721415351}
+  block: {fileID: 0}
   visibleTargets: []
 --- !u!1 &762811294
 GameObject:
@@ -3660,7 +3661,7 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 0
-  block: {fileID: 1285314509}
+  block: {fileID: 0}
   visibleTargets: []
 --- !u!1 &1293850404
 GameObject:
@@ -3921,7 +3922,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7036513169200186936, guid: fd756e4e337dc694db0ef398f124d1ef, type: 3}
       propertyPath: m_Name
-      value: Block_Slow
+      value: Block_Very_Slow
       objectReference: {fileID: 0}
     - target: {fileID: 7036513169200186936, guid: fd756e4e337dc694db0ef398f124d1ef, type: 3}
       propertyPath: m_Layer
@@ -3941,7 +3942,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7036513169200186942, guid: fd756e4e337dc694db0ef398f124d1ef, type: 3}
       propertyPath: value
-      value: 0.08
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 7036513169200186943, guid: fd756e4e337dc694db0ef398f124d1ef, type: 3}
       propertyPath: m_RootOrder
@@ -3989,7 +3990,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7036513169340650661, guid: fd756e4e337dc694db0ef398f124d1ef, type: 3}
       propertyPath: m_Text
-      value: Go Slow
+      value: Go very Slow
       objectReference: {fileID: 0}
     - target: {fileID: 7036513169340650663, guid: fd756e4e337dc694db0ef398f124d1ef, type: 3}
       propertyPath: m_Layer
@@ -4038,7 +4039,7 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 0
-  block: {fileID: 1304889045}
+  block: {fileID: 0}
   visibleTargets: []
 --- !u!1001 &1325609416
 PrefabInstance:
@@ -5334,6 +5335,7 @@ MonoBehaviour:
   state: 3
   driveSound: {fileID: 8300000, guid: 5d838c254d1eaf44ca84a113ff5b57c4, type: 3}
   crashSound: {fileID: 8300000, guid: e192321e3f857c54eba14d4d0ff0f0a5, type: 3}
+  clapSound: {fileID: 8300000, guid: 20b4a112df22b403ca630b87c90e1f75, type: 3}
 --- !u!65 &1863797181
 BoxCollider:
   m_ObjectHideFlags: 0

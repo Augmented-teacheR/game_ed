@@ -34,7 +34,7 @@ public class Car : MonoBehaviour
     private IEnumerator distanceCorutine;
 
     private AudioSource audioSource;
-    public AudioClip driveSound, crashSound;
+    public AudioClip driveSound, crashSound, clapSound;
 
     private bool isCarAudioStarted = false;
 
@@ -177,6 +177,11 @@ public class Car : MonoBehaviour
             if(other.gameObject.tag.Equals("Obstacle"))
             {
                 audioSource.clip = crashSound;
+                audioSource.Play();
+            }
+            else
+            {
+                audioSource.clip = clapSound;
                 audioSource.Play();
             }
             state = MovementType.finished;

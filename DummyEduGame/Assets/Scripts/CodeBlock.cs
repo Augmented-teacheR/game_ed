@@ -16,7 +16,7 @@ public class CodeBlock : MonoBehaviour
 
     public void ReadValues()
     {
-        var maxValue = FindMaxVoteAmount(blocks);
+        var maxValue = FindMaxVoteAmount();
 
         for(int i = 0; i < blocks.Count; i++) {
             Block block = blocks[i];
@@ -26,7 +26,7 @@ public class CodeBlock : MonoBehaviour
 
         if(blocks.Count > 1) randomBlock = blocks[Random.Range(0, blocks.Count-1)];
         
-        else if(blocks.Count == 0) Debug.LogError("No Blocks Found");
+        else if(blocks.Count == 0) Debug.LogError("No Blocks with Maximum Value Found");
         
         else randomBlock = blocks[0];
         
@@ -49,8 +49,10 @@ public class CodeBlock : MonoBehaviour
         }
     }
 
-    private float FindMaxVoteAmount(List<Block> blockList)
+    private float FindMaxVoteAmount()
     {
+        if (blocks.Count == 0) Debug.LogError("Empty List of Blocks");
+
         List<float> values = new List<float>();
 
         for (int i = 0; i < blocks.Count; i++)
