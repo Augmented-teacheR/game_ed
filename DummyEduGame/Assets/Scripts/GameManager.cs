@@ -49,9 +49,9 @@ public class GameManager : MonoBehaviour
     private void SetCarValues()
     {
         codeBlock.ReadValues();
-        this.carDistance = codeBlock.GetDistance();
-        this.carTime = codeBlock.GetTime();
-        this.carVelocity = codeBlock.GetVelocity();
+        this.carDistance = codeBlock.GetReadDistance();
+        this.carTime = codeBlock.GetReadTime();
+        this.carVelocity = codeBlock.GetReadVelocity();
     }
 
     public void ResetScene()

@@ -2,18 +2,24 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
+/**
+ * Class to create a sphere for a block, that recognizes vote targets inside its own sphere
+ */
 public class FieldOfView : MonoBehaviour
 {
+    // Radius of the sphere
     public float viewRadius;
+
     [Range(0, 360)]
     public float viewAngle;
 
+    // Targetmask for the sphere
     public LayerMask targetMask;
-    public LayerMask obstacleMask;
 
     [HideInInspector]
     public List<Transform> visibleTargets = new List<Transform>();
 
+    // Block for which a sphere is created
     private Block block;
 
     private void Awake()
@@ -23,9 +29,12 @@ public class FieldOfView : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine("FindTargetsWithDelay", .1f);
+        StartCoroutine("FindTargetsWithDelay", 0.1f);
     }
 
+    /**
+     * Coroutine to find targets inside the sphere
+     */
     IEnumerator FindTargetsWithDelay(float delay)
     {
         while (true)
@@ -35,7 +44,11 @@ public class FieldOfView : MonoBehaviour
         }
     }
 
-    void FindVisibleTargets()
+    /**
+     * Create sphere and add targets that are inside of it.
+     * Send the current amount of vote targets to the block
+     */
+    private void FindVisibleTargets()
     {
         visibleTargets.Clear();
 

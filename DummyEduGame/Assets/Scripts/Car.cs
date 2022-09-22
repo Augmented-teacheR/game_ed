@@ -55,6 +55,7 @@ public class Car : MonoBehaviour
 
         this.state = SetState(this.distance, this.time, this.velocity);
     }
+
     private MovementType SetState(float distance, float time, float velocity)
     {
         if(distance != 0 && time != 0)

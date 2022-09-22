@@ -2,18 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ * Class to store blocks that can be voted for by the players.
+ * The block with the most votes will be activated and its values will be read and saved here.
+ * The GameMananger can use these values to configurate the level.
+ */
 public class CodeBlock : MonoBehaviour
 {
+    // All blocks that can be voted
     public List<Block> blocks;
+
     [SerializeField]
     private float readDistance;
     [SerializeField]
     private float readTime;
     [SerializeField]
     private float readVelocity;
+
+    // If multiple blocks have the same amount of votes, one block will be chosen randomly
     [SerializeField]
     private Block randomBlock;
 
+    /**
+     * Determine which block should be activated and read its values
+     */
     public void ReadValues()
     {
         var maxValue = FindMaxVoteAmount();
@@ -33,6 +45,9 @@ public class CodeBlock : MonoBehaviour
         GetValue(randomBlock);
     }
 
+    /**
+     * Read the value of a block
+     */
     private void GetValue(Block block)
     {
         switch (block.GetBlockType())
@@ -49,6 +64,9 @@ public class CodeBlock : MonoBehaviour
         }
     }
 
+    /**
+     * Find the maximum amount of votes for all blocks
+     */
     private float FindMaxVoteAmount()
     {
         if (blocks.Count == 0) Debug.LogError("Empty List of Blocks");
@@ -65,17 +83,17 @@ public class CodeBlock : MonoBehaviour
         return maxValue;
     }
 
-    public float GetDistance()
+    public float GetReadDistance()
     {
         return this.readDistance;
     }
 
-    public float GetTime()
+    public float GetReadTime()
     {
         return this.readTime;
     }
 
-    public float GetVelocity()
+    public float GetReadVelocity()
     {
         return this.readVelocity;
     }

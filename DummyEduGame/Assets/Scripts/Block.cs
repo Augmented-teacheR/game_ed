@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ * Class to define a block. Each block has its own type and a specific value for that type.
+ * The amount of votes one block received is also stored here.
+ */
 public enum BlockType
 {
     velocity, distance, time

@@ -58,7 +58,7 @@ public class CarInteraction : MonoBehaviour
             FindCar();
         }
     }
-    void FindCar()
+    private void FindCar()
     {
         visibleTargets.Clear();
 
@@ -91,10 +91,6 @@ public class CarInteraction : MonoBehaviour
             {
                 PlayStarted = true;
             }
-            //if (target.transform.position.z < StartingCarPosition + launchingPosition)
-            //{
-            //    PlayStarted = true;
-            //}
         }
     }
 
