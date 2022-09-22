@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/**
+ * Organizes the level scene and is in charge of initiating movement in the scene.
+ * 
+ */
 public class GameManager : MonoBehaviour
 {
     [Header("Game Objects")]
@@ -32,13 +36,12 @@ public class GameManager : MonoBehaviour
         audioSource.Play();
     }
 
-
     public Car Car { get => car; set => car = value; }
     public Train Train { get => train; set => train = value; }
     public CodeBlock CodeBlock { get => codeBlock; set => codeBlock = value; }
     public CarInteraction CarInteraction { get => carInteraction; set => carInteraction = value; }
 
-    public void Play()
+    private void Play()
     {
         SetCarValues();
         car.Go(carDistance, carTime, carVelocity);
@@ -46,6 +49,9 @@ public class GameManager : MonoBehaviour
         Debug.Log("Button clicked");
     }
 
+    /**
+     * Sets the variables that define the car´s speed, max traveling distance  and max traveling time.
+     */
     private void SetCarValues()
     {
         codeBlock.ReadValues();
@@ -59,6 +65,10 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    /**
+     * When this corutine is called, it waits until the car is in the right
+     * position and then initiates the car´s movement.
+     */
     public IEnumerator StartCar()
     {
         Debug.Log("Start car corutine called");

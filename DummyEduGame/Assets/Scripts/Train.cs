@@ -7,6 +7,10 @@ public enum TrainState
 {
     running, finished
 }
+/**
+ * Contains the behaviour of the train.
+ * Can start and stop the train´s movement.
+ * **/
 public class Train : MonoBehaviour
 {
 

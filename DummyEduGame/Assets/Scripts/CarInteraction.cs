@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ * 
+ */
 public class CarInteraction : MonoBehaviour
 {
     [SerializeField]
@@ -48,7 +51,6 @@ public class CarInteraction : MonoBehaviour
         StartCoroutine(_gameManager.StartCar());
         StartCoroutine("FindTargetsWithDelay", .2f);
     }
-
     IEnumerator FindTargetsWithDelay(float delay)
     {
         Debug.Log("Corutine started find target");
@@ -58,6 +60,11 @@ public class CarInteraction : MonoBehaviour
             FindCar();
         }
     }
+    /**
+     * Overlaping an invisible sphere over the object that has this script, 
+     * it looks for the object with the tag "Car".
+     * When found, sets the found object as the Car of the class.
+     */
     private void FindCar()
     {
         visibleTargets.Clear();
@@ -78,6 +85,16 @@ public class CarInteraction : MonoBehaviour
 
     private void Update()
     {
+        MoveCar();
+    }
+    /**
+     * If the car has been found, the car will take a position relative to this object,
+     * within the setted limits.
+     * When the furthest back distance has been reached, the independent movement of
+     * the car will begin.
+     */
+    private void MoveCar()
+    {
         if (isCarSet)
         {
             if ((car.transform.localPosition.z < StartingCarPosition + positiveLimit)
@@ -93,6 +110,5 @@ public class CarInteraction : MonoBehaviour
             }
         }
     }
-
 
 }

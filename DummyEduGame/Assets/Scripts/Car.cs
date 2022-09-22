@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/**
+ * Enum that defines the type of movement the car has.
+ */
 public enum MovementType
 {
     time, velocity, distance, finished
 }
-
+/**
+ * Contains the behaviour of the car.
+ * Can determine the velocity, distance and time the car will have,
+ * depending on the variables provided by the user.
+ */
 public class Car : MonoBehaviour
 {
     [SerializeField]
@@ -47,6 +54,10 @@ public class Car : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
+    /**
+     * Defines the distance, time and velocity of the car and
+     * calls for the state of the car to be set.
+     */
     public void Go(float distance, float time, float velocity)
     {
         this.distance = distance != 0 ? distance : this.distance;
@@ -56,6 +67,9 @@ public class Car : MonoBehaviour
         this.state = SetState(this.distance, this.time, this.velocity);
     }
 
+    /**
+     * Chooses the corresponding state for the car.
+     */
     private MovementType SetState(float distance, float time, float velocity)
     {
         if(distance != 0 && time != 0)
@@ -89,6 +103,10 @@ public class Car : MonoBehaviour
         }
     }
 
+    /**
+     * Considering the MovementState of the car,
+     * calls the corresponding kind of movement.
+     */
     private void StartMovement()
     {
         if (!isCarAudioStarted)
@@ -121,6 +139,9 @@ public class Car : MonoBehaviour
         }
     }
 
+    /**
+     * Moves the car considering the set speed.
+     */
     private void VelocityDependantMovement()
     {
         float x = transform.localPosition.x;
@@ -129,11 +150,18 @@ public class Car : MonoBehaviour
 
         transform.localPosition = new Vector3(x, y, z);
     }
+    /**
+     * Call for the car to move at a certain velocity and starts a timer to stop it.
+     */
     private void TimeDependantMovement()
     {
         VelocityDependantMovement();
         if (!isTimerCounting) StartCoroutine(timerCorutine);
     }
+
+    /**
+     * Timer to stop the car after a certain delay.
+     */
     private IEnumerator StartTimer()
     {
         isTimerCounting = true;
@@ -147,17 +175,26 @@ public class Car : MonoBehaviour
             isMovingToDistance = false;
         }
     }
+    /**
+     * Call for the car to move at a certain velocity and starts a corutine that stops it after a distance.
+     */
     private void DistanceDependantMovement()
     {
         VelocityDependantMovement();
         if (!isMovingToDistance) StartCoroutine(distanceCorutine);
     }
+    /**
+     * This was a redundant function we did not notice.
+     */
     private void TimeAndDistanceDependantMovement()
     {
         VelocityDependantMovement();
         if (!isTimerCounting) StartCoroutine(timerCorutine);
     }
 
+    /**
+     * Corutine that stops the car if it has driven a certain distance.
+     */
     private IEnumerator WaitForDistance()
     {
         isMovingToDistance = true;
@@ -171,6 +208,9 @@ public class Car : MonoBehaviour
             isTimerCounting = false;
         }
     }
+    /**
+     * When entering a trigger, the car is stopped and the outcome is decided.
+     */
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag.Equals("Obstacle") || other.gameObject.tag.Equals("SuccessArea"))
