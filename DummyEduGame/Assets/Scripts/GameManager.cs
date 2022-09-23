@@ -4,8 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /**
+ * <summary>
  * Organizes the level scene and is in charge of initiating movement in the scene.
- * 
+ * </summary>
  */
 public class GameManager : MonoBehaviour
 {
@@ -50,7 +51,9 @@ public class GameManager : MonoBehaviour
     }
 
     /**
+     * <summary>
      * Sets the variables that define the car´s speed, max traveling distance  and max traveling time.
+     * </summary>
      */
     private void SetCarValues()
     {
@@ -66,8 +69,10 @@ public class GameManager : MonoBehaviour
     }
 
     /**
+     * <summary>
      * When this corutine is called, it waits until the car is in the right
      * position and then initiates the car´s movement.
+     * </summary>
      */
     public IEnumerator StartCar()
     {

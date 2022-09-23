@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 
 /**
- * Class to create a sphere for a block, that recognizes vote targets inside its own sphere
+ * <summary>
+ * Class to create a sphere for a block, that recognizes vote targets inside its own sphere.
+ * </summary>
  */
 public class FieldOfView : MonoBehaviour
 {
@@ -33,7 +35,9 @@ public class FieldOfView : MonoBehaviour
     }
 
     /**
+     * <summary>
      * Coroutine to find targets inside the sphere
+     * </summary>
      */
     IEnumerator FindTargetsWithDelay(float delay)
     {
@@ -45,8 +49,10 @@ public class FieldOfView : MonoBehaviour
     }
 
     /**
+     * <summary>
      * Create sphere and add targets that are inside of it.
-     * Send the current amount of vote targets to the block
+     * Send the current amount of vote targets to the block.
+     * </summary>
      */
     private void FindVisibleTargets()
     {

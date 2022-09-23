@@ -5,16 +5,20 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /**
+ * <summary>
  * Enum that defines the type of movement the car has.
+ * </summary>
  */
 public enum MovementType
 {
     time, velocity, distance, finished
 }
 /**
+ * <summary>
  * Contains the behaviour of the car.
  * Can determine the velocity, distance and time the car will have,
  * depending on the variables provided by the user.
+ * </summary>
  */
 public class Car : MonoBehaviour
 {
@@ -55,8 +59,10 @@ public class Car : MonoBehaviour
     }
 
     /**
+     * <summary>
      * Defines the distance, time and velocity of the car and
      * calls for the state of the car to be set.
+     * </summary>
      */
     public void Go(float distance, float time, float velocity)
     {
@@ -68,7 +74,12 @@ public class Car : MonoBehaviour
     }
 
     /**
-     * Chooses the corresponding state for the car.
+     * <summary>
+     * Chooses the corresponding state for the car, depending on the parameters.
+     * </summary>
+     * <param name="distance">Max traveling distance for the car.</param>
+     * <param name="time">Max moving time for the car.</param>
+     * <param name="velocity">Speed set for the car.</param>
      */
     private MovementType SetState(float distance, float time, float velocity)
     {
@@ -104,8 +115,10 @@ public class Car : MonoBehaviour
     }
 
     /**
+     * <summary>
      * Considering the MovementState of the car,
      * calls the corresponding kind of movement.
+     * </summary>
      */
     private void StartMovement()
     {
@@ -140,7 +153,9 @@ public class Car : MonoBehaviour
     }
 
     /**
+     * <summary>
      * Moves the car considering the set speed.
+     * </summary>
      */
     private void VelocityDependantMovement()
     {
@@ -151,7 +166,9 @@ public class Car : MonoBehaviour
         transform.localPosition = new Vector3(x, y, z);
     }
     /**
+     * <summary>
      * Call for the car to move at a certain velocity and starts a timer to stop it.
+     * </summary>
      */
     private void TimeDependantMovement()
     {
@@ -160,7 +177,9 @@ public class Car : MonoBehaviour
     }
 
     /**
+     * <summary>
      * Timer to stop the car after a certain delay.
+     * </summary>
      */
     private IEnumerator StartTimer()
     {
@@ -176,7 +195,9 @@ public class Car : MonoBehaviour
         }
     }
     /**
+     * <summary>
      * Call for the car to move at a certain velocity and starts a corutine that stops it after a distance.
+     * </summary>
      */
     private void DistanceDependantMovement()
     {
@@ -184,7 +205,9 @@ public class Car : MonoBehaviour
         if (!isMovingToDistance) StartCoroutine(distanceCorutine);
     }
     /**
+     * <summary>
      * This was a redundant function we did not notice.
+     * </summary>
      */
     private void TimeAndDistanceDependantMovement()
     {
@@ -193,7 +216,9 @@ public class Car : MonoBehaviour
     }
 
     /**
+     * <summary>
      * Corutine that stops the car if it has driven a certain distance.
+     * </summary>
      */
     private IEnumerator WaitForDistance()
     {
@@ -209,7 +234,9 @@ public class Car : MonoBehaviour
         }
     }
     /**
+     * <summary>
      * When entering a trigger, the car is stopped and the outcome is decided.
+     * </summary>
      */
     private void OnTriggerEnter(Collider other)
     {

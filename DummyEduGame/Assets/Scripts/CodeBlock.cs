@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /**
+ * <summary>
  * Class to store blocks that can be voted for by the players.
  * The block with the most votes will be activated and its values will be read and saved here.
  * The GameMananger can use these values to configurate the level.
+ * </summary>
  */
 public class CodeBlock : MonoBehaviour
 {
@@ -24,7 +26,9 @@ public class CodeBlock : MonoBehaviour
     private Block randomBlock;
 
     /**
+     * <summary>
      * Determine which block should be activated and read its values
+     * </summary>
      */
     public void ReadValues()
     {

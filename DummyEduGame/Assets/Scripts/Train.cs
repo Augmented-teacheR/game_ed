@@ -8,8 +8,10 @@ public enum TrainState
     running, finished
 }
 /**
+ * <summary>
  * Contains the behaviour of the train.
  * Can start and stop the train´s movement.
+ * </summary>
  * **/
 public class Train : MonoBehaviour
 {
@@ -23,6 +25,21 @@ public class Train : MonoBehaviour
 
     private void Update()
     {
+        MoveForward();
+    }
+
+    internal void Begin()
+    {
+        state = TrainState.running;
+    }
+
+    /**
+     * <summary>
+     * Move the train forward, when it´s state is not "finished"
+     * </summary>
+     */
+    private void MoveForward()
+    {
         if (state != TrainState.finished)
         {
             float x = transform.localPosition.x + speed * Time.deltaTime;
@@ -33,11 +50,11 @@ public class Train : MonoBehaviour
             if (x > 10) state = TrainState.finished;
         }
     }
-
-    internal void Begin()
-    {
-        state = TrainState.running;
-    }
+    /**
+     * <summary>
+     * If the train collides with something, it stops
+     * </summary>
+     */
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag.Equals("Car")){
