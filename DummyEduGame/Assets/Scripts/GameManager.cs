@@ -42,6 +42,11 @@ public class GameManager : MonoBehaviour
     public CodeBlock CodeBlock { get => codeBlock; set => codeBlock = value; }
     public CarInteraction CarInteraction { get => carInteraction; set => carInteraction = value; }
 
+    /**
+     * <summary>
+     * Starts the movement of the car and the train.
+     * </summary>
+     */
     private void Play()
     {
         SetCarValues();
