@@ -2,16 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+public enum BlockType
+{
+    velocity, distance, time
+}
 /**
  * <summary>
  * Class to define a block. Each block has its own type and a specific value for that type.
  * The amount of votes one block received is also stored here.
  * </summary>
  */
-public enum BlockType
-{
-    velocity, distance, time
-}
 public class Block : MonoBehaviour
 {
     [SerializeField]

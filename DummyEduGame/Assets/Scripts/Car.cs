@@ -62,6 +62,9 @@ public class Car : MonoBehaviour
      * <summary>
      * Defines the distance, time and velocity of the car and
      * calls for the state of the car to be set.
+     * <param name="distance">Max traveling distance for the car.</param>
+     * <param name="time">Max moving time for the car.</param>
+     * <param name="velocity">Speed set for the car.</param>
      * </summary>
      */
     public void Go(float distance, float time, float velocity)
