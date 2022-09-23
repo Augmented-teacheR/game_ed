@@ -2,7 +2,7 @@
 
 # Idea: 
 
-The Augmented TeacheR is an app that allows users to interact with the subject through expirements that are done in real-time and supports multi-users.
+The Augmented TeacheR is an app that allows users to interact with the subject through expirements that are done in real-time and supports multi-users utilizing Augmented Reality.
 
 
 # Flow: 
