@@ -1,4 +1,4 @@
-# game_ed
+# Augmented teacheR
 
 # Idea: 
 
